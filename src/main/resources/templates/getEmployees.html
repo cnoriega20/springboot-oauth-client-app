@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Employees</title>
+</head>
+<body>
+    <h3 style="color: #ff0000;">Get Employee Info</h3>
+    <div id="getEmployees">
+        <form th:action="@{http://localhost:8080/oauth/authorize}"
+                   method="post" modelAttribute="emp">
+
+                <label>Enter Employee Id</label>
+            <label>
+                <input type="text" name="response_type" value="code" />
+            </label>
+            <label>
+                <input type="text" name="client_id" value="cnoriega" />
+            </label>
+            <label>
+                <input type="text" name="redirect_uri" value="http://localhost:8090/showEmployees" />
+            </label>
+            <label>
+                <input type="text" name="scope" value="read" />
+            </label>
+            <input type="SUBMIT" value="Get Employee info" />
+        </form>
+    </div>
+</body>
+</html>
